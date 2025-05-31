@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('http://localhost:3000/auth/status', {
+        const response = await fetch('https://havinci-production.up.railway.app', {
           credentials: 'include'
         });
         const data = await response.json();
