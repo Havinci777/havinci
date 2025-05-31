@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('https://havinci-production.up.railway.app', {
+        const response = await fetch('https://havinci-production.up.railway.app/auth/status', {
           credentials: 'include'
         });
         const data = await response.json();
@@ -50,13 +50,13 @@ function App() {
 
   // Handle login
   const handleLogin = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://havinci-production.up.railway.app/auth/google';
   };
 
   // Handle logout
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:3000/auth/logout', {
+      await fetch('https://havinci-production.up.railway.app/auth/logout', {
         credentials: 'include'
       });
       setIsAuthenticated(false);
@@ -81,7 +81,7 @@ function App() {
     
     try {
       // Send query to backend
-      const response = await fetch('http://localhost:3000/api/chat', {
+      const response = await fetch('https://havinci-production.up.railway.app/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
